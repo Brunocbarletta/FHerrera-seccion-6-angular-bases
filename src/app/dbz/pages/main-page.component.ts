@@ -21,4 +21,8 @@ export class MainPageComponent {
       power: 7500
     }
   ];
+
+  addCharacter(character: Character): void {
+    this.characters.push(character);
+  }
 }
