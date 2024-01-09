@@ -8,7 +8,7 @@ import { Character } from '../../interfaces/character.interface';
 })
 
 export class AddCharacter implements OnInit {
-  @Output()
+  @Output("alAgregarPersonaje")
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
@@ -23,9 +23,8 @@ export class AddCharacter implements OnInit {
   emitCharacter(): void {
     if (this.character.name.length === 0) return;
 
-    this.onNewCharacter.emit({...this.character}); 
+    this.onNewCharacter.emit(this.character); 
 
-    this.character.name = "";
-    this.character.power = 0;
+    this.character = {name: "", power: 0};
   }
 }

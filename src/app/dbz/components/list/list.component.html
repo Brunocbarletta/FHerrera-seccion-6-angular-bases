@@ -18,18 +18,21 @@
     even as isEven;
     odd as isOdd;
     " 
-    class="list-group-item"
+    class="list-group-item d-flex justify-content-between align-items-center"
     [ngClass]="{
       'list-group-item-success': isFirst,
       'list-group-item-primary': isEven
     }"
   >
-    <span>{{ i + 1 }} </span>
-    <span>{{ character.name }} - </span>
-    <strong>Power: </strong>
-    <span>{{character.power}}</span>
-    <span [ngClass]=""> | Es el primero: {{ isFirst }}</span>
-    <span> | Es par: {{ isEven }}</span>
-    <span> | Es impar: {{ isOdd }}</span>
+    <div>
+      <span>{{ i + 1 }} </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{character.power}}</span>
+      <span [ngClass]=""> | Es el primero: {{ isFirst }}</span>
+      <span> | Es par: {{ isEven }}</span>
+      <span> | Es impar: {{ isOdd }}</span>
+    </div>
+    <button class="btn btn-danger" (click)="onDeleteCharacter(i)">X</button>
   </li>
 </ul>
