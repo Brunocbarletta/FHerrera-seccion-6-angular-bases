@@ -12,6 +12,7 @@ export class AddCharacter implements OnInit {
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
+    id: "",
     name: "",
     power: 0
   };
@@ -25,6 +26,6 @@ export class AddCharacter implements OnInit {
 
     this.onNewCharacter.emit(this.character); 
 
-    this.character = {name: "", power: 0};
+    this.character = {name: "", power: 0, id: ""};
   }
 }
